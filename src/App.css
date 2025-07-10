@@ -1,0 +1,151 @@
+/* Base styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p, li {
+  font-size: 1.1rem;
+}
+
+/* Section spacing */
+  section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+  margin-bottom: 60px;
+  padding: 40px 20px;
+}
+
+
+
+/* Lists */
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+/* Sidebar styles */
+.sidebar {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 180px;
+  height: 100%;
+  background-color: #222;
+  padding-top: 20px;
+  z-index: 999;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0 15px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar li a {
+  color: #ccc;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.sidebar li a:hover,
+.sidebar li .active {
+  color: #61dafb;
+  font-weight: bold;
+}
+
+/* Main content spacing */
+.main-content {
+  margin-left: 200px; /* Optional: remove or reduce */
+  padding: 20px;
+}
+
+
+/* Dark mode toggle */
+.mode-toggle {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  z-index: 1000;
+  padding: 8px 16px;
+  background-color: #444;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Dark mode */
+.dark {
+  background-color: #111;
+  color: white;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+  }
+
+  section {
+    padding: 20px;
+    min-height: auto;
+  }
+}
+.top-left-label {
+  position: top left fixed;
+  top: 10px;
+  right: 200px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #61dafb;
+  background-color: #1f1f1f;
+  padding: 15px 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+}
+.profile-image {
+  width: 250px;
+  height: 250px;
+  border-radius: 80%;
+  object-fit: center;
+  border: 3px solid #061317;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
