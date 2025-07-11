@@ -1,66 +1,57 @@
 import React, { useState, useEffect } from "react";
-import { Link as ScrollLink, Element } from "react-scroll";
-import { Routes, Route, Link } from "react-router-dom";
+import { Element, Link as ScrollLink } from "react-scroll";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import './App.css';
+import "./App.css";
+import { FaSun, FaMoon } from "react-icons/fa";
 
-
-function Sidebar() {
+function Navbar({ darkMode, toggleDarkMode }) {
+  const sections = ["home", "about", "education", "skills", "projects", "contact"];
   return (
-    <div className="sidebar">
-      <ul>
-        <li><ScrollLink to="home" smooth={true} duration={500} spy={true} activeClass="active">Home</ScrollLink></li>
-        <li><ScrollLink to="about" smooth={true} duration={500} spy={true} activeClass="active">About</ScrollLink></li>
-        <li><ScrollLink to="education" smooth={true} duration={500} spy={true} activeClass="active">Education</ScrollLink></li>
-        <li><ScrollLink to="skills" smooth={true} duration={500} spy={true} activeClass="active">Skills</ScrollLink></li>
-        <li><ScrollLink to="projects" smooth={true} duration={500} spy={true} activeClass="active">Projects</ScrollLink></li>
-        <li><ScrollLink to="certifications" smooth={true} duration={500} spy={true} activeClass="active">Certifications</ScrollLink></li>
-        <li><ScrollLink to="experience" smooth={true} duration={500} spy={true} activeClass="active">Experience</ScrollLink></li>
-        <li><ScrollLink to="achievements" smooth={true} duration={500} spy={true} activeClass="active">Achievements</ScrollLink></li>
-        <li><ScrollLink to="contact" smooth={true} duration={500} spy={true} activeClass="active">Contact</ScrollLink></li>
+    <nav className="navbar">
+      <div className="nav-left">TALARI NITHIN</div>
+      <ul className="nav-links">
+        {sections.map(section => (
+          <li key={section}>
+            <ScrollLink to={section} smooth duration={500} spy activeClass="active">
+              {section.charAt(0).toUpperCase() + section.slice(1)}
+            </ScrollLink>
+          </li>
+        ))}
       </ul>
-    </div>
+      <button onClick={toggleDarkMode} className="mode-toggle">
+        {darkMode ? <FaSun /> : <FaMoon />}
+      </button>
+    </nav>
   );
 }
 
 function SectionWrapper({ name, children }) {
-  return <Element name={name}>{children}</Element>;
+  return <Element name={name} className="section-wrapper">{children}</Element>;
 }
 
-function Home() {
+function ProfileHeader() {
   return (
-    <SectionWrapper name="home">
-      <section className="home" data-aos="fade-in" data-aos-delay="100">
-        <h2>Hello, I'm Talari Nithin</h2>
-        <p>Aspiring Web Developer | Enthusiastic Learner</p>
-        <img src="/myphoto.jpg.png" alt="Profile" className="profile-image" />
-      </section>
-    </SectionWrapper>
+    <section className="profile-header" data-aos="fade-down">
+      <img src="Myphoto.jpg.png"  alt="Profile" className="profile-pic" />
+      <h2>Hi, I'm Talari Nithin</h2>
+      <p>Aspiring Full Stack Developer | Creative Thinker | Fast Learner</p>
+      <a href="/resume.pdf" download className="resume-button">Download Resume</a>
+    </section>
   );
 }
 
 function About() {
   return (
     <SectionWrapper name="about">
-     <section className="about" data-aos="fade-left" data-aos-delay="200">
+      <section className="section" data-aos="fade-up">
         <h2>About Me</h2>
-        <p>Creative and enthusiastic engineering student with a passion for designing and building innovative solutions.
-           I’m eager to explore new opportunities that challenge my skills and help me grow, 
-           while also building a strong and authentic personal brand.</p>
-        <h4>Career Objective:</h4>
-        <p>To obtain a challenging position as a web developer where I can apply my technical and problem-solving skills.
-           I aim to contribute to innovative projects while gaining industry experience.
-            I am committed to developing quality web solutions and continuously improving my knowledge in modern technologies.</p>
-        <h4>Soft Skills:</h4>
-        <ul>
-           <li>Creative Thinking & Innovation</li>
-           <li>Adaptability to New Tools & Tech</li>
-           <li>Effective Virtual Communication</li>
-           <li>Critical Thinking & Problem Solving</li>
-           <li>Time and Priority Management</li>
-           <li>Learning Agility & Self-Motivation</li>
-        </ul>
+        <p>
+          I’m a curious and motivated engineering student who enjoys transforming ideas into code. With strong fundamentals in web development and a growing knowledge of backend integration, I enjoy learning new technologies and solving problems with creativity and logic.
+        </p>
+        <p>
+          Beyond coding, I love analyzing data, designing interfaces, and sharing knowledge through blogging and open-source projects.
+        </p>
       </section>
     </SectionWrapper>
   );
@@ -69,15 +60,17 @@ function About() {
 function Education() {
   return (
     <SectionWrapper name="education">
-      <section className="education" data-aos="zoom-in" data-aos-delay="300">
+      <section className="section" data-aos="zoom-in-up">
         <h2>Education</h2>
-        <div className="education-item">
+        <div className="education-block">
           <h3>B.Tech in Computer Science (Data Science)</h3>
           <p>Sri Venkateswara College of Engineering and Technology, Chittoor</p>
-          <p>Year: 2022 – 2026</p>
-          <p>CGPA: 8.0 / 10</p>
-          <p><strong>Relevant Coursework:</strong> Data Structures, DBMS, Web Technologies, Machine Learning</p>
-          <p><strong>Clubs:</strong> Member of CodeHub | Organizer at Technical Fest</p>
+          <p>2022 – 2026 | CGPA: 8.0 / 10</p>
+        </div>
+        <div className="education-block">
+          <h3>Intermediate – MPC</h3>
+          <p>Sri Chaitanya Junior College</p>
+          <p>2020 – 2022 | Score: 95%</p>
         </div>
       </section>
     </SectionWrapper>
@@ -85,24 +78,30 @@ function Education() {
 }
 
 function Skills() {
+  const skills = [
+    { name: "React.js", level: 80 },
+    { name: "JavaScript ", level: 85 },
+    { name: "CSS / HTML ", level: 80 },
+    { name: "MongoDB & MySQL", level: 50 },
+    { name: "Git & GitHub", level: 80 },
+    { name: "Node.js (Basic)", level: 70 },
+    { name: "Python", level: 90 }
+  ];
+
   return (
     <SectionWrapper name="skills">
-      <section className="skills" data-aos="fade-right" data-aos-delay="400">
+      <section className="section" data-aos="fade-right">
         <h2>Technical Skills</h2>
-        <ul className="skill-list">
-</ul>
-<h4>Frontend & Development:</h4>
-<ul>
-  <li>React.js, HTML5, CSS3, JavaScript</li>
-  <li>Git & GitHub, Responsive Design</li>
-</ul>
-
-<h4>Data & Backend Tools:</h4>
-<ul>
-  <li>Python (NumPy, Pandas), MySQL, MongoDB</li>
-  <li>APIs, Firebase, Machine Learning Basics</li>
-</ul>
-
+        <div className="skills-grid">
+          {skills.map((skill, i) => (
+            <div className="skill-card" key={i}>
+              <h4>{skill.name}</h4>
+              <div className="progress-bar">
+                <div className="progress-fill" style={{ width: `${skill.level}%` }}></div>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
     </SectionWrapper>
   );
@@ -111,69 +110,18 @@ function Skills() {
 function Projects() {
   return (
     <SectionWrapper name="projects">
-      <section className="projects" data-aos="flip-up" data-aos-delay="500">
+      <section className="section" data-aos="fade-left">
         <h2>Projects</h2>
-        <div className="project-item">
-          <h3>Project Title 1</h3>
-          <p>Brief description of the project.</p>
-          <p><strong>Tech Used:</strong> React, CSS, API</p>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <div className="project-grid">
+          <div className="project-card">
+            <h4>College Dashboard</h4>
+            <p>A responsive platform for teachers and students to manage classes, submit assignments, and view attendance.</p>
+          </div>
+          <div className="project-card">
+            <h4>Portfolio Website</h4>
+            <p>Built using React.js with dark/light mode toggle, scroll animations, and resume downloads.</p>
+          </div>
         </div>
-        <div className="project-item">
-          <h3>Project Title 2</h3>
-          <p>Brief description of another project.</p>
-          <p><strong>Tech Used:</strong> HTML, JavaScript</p>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
-        </div>
-      </section>
-    </SectionWrapper>
-  );
-}
-
-function Certifications() {
-  return (
-    <SectionWrapper name="certifications">
-      <section className="certifications" data-aos="zoom-in" data-aos-delay="600">
-        <h2>Certifications</h2>
-        <ul>
-          <li>Front-End Web Development – Coursera</li>
-          <il>Power BI – PrepInsta</il>
-          <li>Analyzing Data with R – IBM</li>
-          <li>Visualizing Data with R– IBM</li>
-        </ul>
-      </section>
-    </SectionWrapper>
-  );
-}
-
-function Experience() {
-  return (
-    <SectionWrapper name="experience">
-      <section className="experience" data-aos="fade-left" data-aos-delay="700">
-        <h2>Internship / Work Experience</h2>
-        <div className="experience-item">
-          <h3>React Developer Intern – NRKS Skill Development</h3>
-          <p>Duration: July 2025 – Present</p>
-          <ul>
-            <li>Developed responsive UI using React JS</li>
-            <li>Collaborated using GitHub</li>
-          </ul>
-        </div>
-      </section>
-    </SectionWrapper>
-  );
-}
-
-function Achievements() {
-  return (
-    <SectionWrapper name="achievements">
-      <section className="achievements" data-aos="fade-up" data-aos-delay="800">
-        <h2>Achievements</h2>
-        <ul>
-          <li>Top 10% in XYZ Coding Contest</li>
-          <li>Presented paper at ABC Conference</li>
-          <li>Built a college app used by 100+ students</li>
-        </ul>
       </section>
     </SectionWrapper>
   );
@@ -181,25 +129,26 @@ function Achievements() {
 
 function Contact() {
   return (
-    <SectionWrapper name="contact">
-      <section className="contact" data-aos="flip-left" data-aos-delay="900">
+    <Element name="contact">
+      <section className="section contact-section" data-aos="fade-up">
         <h2>Contact Me</h2>
-        <p>Email: talarinithin12@gmail.com</p>
-        <p>Phone: +91 6301331995</p>
-        <p>LinkedIn: <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">yourprofile</a></p>
-        <p>GitHub: <a href="https://github.com" target="_blank" rel="noopener noreferrer">yourusername</a></p>
-        
-      
+        <p>If you'd like to reach out for collaboration, internship, or freelance opportunities:</p>
+
+        <div className="contact-details">
+          <p><strong>Email:</strong> talarinithin@gmail.com</p>
+          <p><strong>Phone:</strong> +91-9876543210</p>
+          <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noreferrer">linkedin.com/in/yourprofile</a></p>
+          <p><strong>GitHub:</strong> <a href="https://github.com/NithinTalari" target="_blank" rel="noreferrer">github.com/NithinTalari</a></p>
+        </div>
       </section>
-    </SectionWrapper>
+    </Element>
   );
 }
-
+  
 function Footer() {
   return (
-    <footer style={{ textAlign: 'center', padding: '20px', background: '#eee' }}>
-      <p>© {new Date().getFullYear()} My Portfolio. All rights reserved.</p>
-      <p>Built with using React</p>
+    <footer className="footer">
+      <p>© {new Date().getFullYear()} Talari Nithin. Built with 💻 using React.js</p>
     </footer>
   );
 }
@@ -213,29 +162,21 @@ function App() {
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
-    document.body.className = !darkMode ? "dark" : "";
+    document.body.classList.toggle("dark", !darkMode);
   };
 
   return (
     <div className={`app-container ${darkMode ? "dark" : ""}`}>
-      {/* 🌗 Dark Mode Button */}
-      <button onClick={toggleDarkMode} className="mode-toggle">
-        {darkMode ? "Light Mode" : "Dark Mode"}
-      </button>
-      <div className="top-left-label">PORTFOLIO</div>
-      <Sidebar />
-      <main className="main-content">
-        <Home />
+      <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+      <ProfileHeader />
+      <main>
         <About />
         <Education />
         <Skills />
         <Projects />
-        <Certifications />
-        <Experience />
-        <Achievements />
         <Contact />
+        <Footer />
       </main>
-      <Footer />
     </div>
   );
 }

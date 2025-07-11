@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# 💼 React Portfolio Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive portfolio website built using **React.js** as part of the NRKS Internship Program. It highlights my projects, technical skills, education, and experience — designed to help me showcase my work to recruiters and collaborators.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🔗 Live Site
 
-### `npm start`
+👉 [View the deployed portfolio on Netlify](https://nrivaled-jelly-65d51b.netlify.app)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🚀 How to Run Locally
 
-### `npm test`
+Follow these steps to clone and run the project on your local machine:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+# 1. Clone the repository
+git clone https://github.com/NithinTalari/my-portfolio-.git
 
-### `npm run build`
+# 2. Navigate into the project folder
+cd my-portfolio-
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# 3. Install dependencies
+npm install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# 4. Start the React development server
+npm start
+Then open your browser at http://localhost:3000
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+🛠 Technologies Used
+React.js – Frontend JavaScript library
 
-### `npm run eject`
+React Router – Navigation and routing
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+AOS (Animate On Scroll) – Scroll animations
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+HTML5 & CSS3 – Markup and styling
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+JavaScript (ES6+) – Interactivity
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Git & GitHub – Version control and code hosting
 
-## Learn More
+Netlify – Deployment platform
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+📸 Screenshots
+Add screenshots to a folder called /screenshots/ and link them here:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+🌞 Light Mode
 
-### Code Splitting
+🌙 Dark Mode
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+🙋‍♂️ Author
+Talari Nithin
+📧 talarinithin12@gmail.com
+🔗 LinkedIn
+🔗 GitHub
 
-### Analyzing the Bundle Size
+📌 Features
+✅ Dark/Light Mode Toggle
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+✅ Responsive design across all devices
 
-### Making a Progressive Web App
+✅ Sidebar Scroll Navigation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+✅ Smooth section animations with AOS
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+✅ Resume download & social profile links
