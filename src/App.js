@@ -136,8 +136,10 @@ function Contact() {
 
         <div className="contact-details">
           <p><strong>Email:</strong> talarinithin@gmail.com</p>
-          <p><strong>Phone:</strong> +91-9876543210</p>
-          <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noreferrer">linkedin.com/in/yourprofile</a></p>
+          <p><strong>Phone:</strong> +91-6301331995</p>
+          <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/nithin-talari-416569268" target="_blank" rel="noreferrer">
+  LinkedIn
+</a></p>
           <p><strong>GitHub:</strong> <a href="https://github.com/NithinTalari" target="_blank" rel="noreferrer">github.com/NithinTalari</a></p>
         </div>
       </section>
